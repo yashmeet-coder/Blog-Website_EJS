@@ -1,0 +1,13 @@
+<%- include('partials/header.ejs') %>
+<h1>Home</h1>
+
+<p><%=homeContent%></p>
+<a href="/compose"><button class="add">+</button></a>
+<%newPosts.forEach(function(post){%>
+    <h1><%=post.title%></h1>
+    <p><%=post.content.substring(0,101)+"..."%>
+    <a href="/posts/<%=post.title%>">Read More</a>
+    <a href="/delete/<%=post.title%>"><button type="button" class="delete">Delete</button></a>
+    </p>
+<%})%>
+<%- include('partials/footer.ejs') %>
